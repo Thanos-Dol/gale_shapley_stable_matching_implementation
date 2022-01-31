@@ -1,0 +1,11 @@
+1 - find an unmatched group a participant || O(n)
+2 - offer a proposition to the 'most preferred group b participant remaining on the list' (first propose
+to the most preferred one, then continue down the list with descending order of preference)
+3a - the proposed group b participant is already matched to some other group a participant and checks to see if the one
+he is matched with is a more suitable choice than the one proposing
+3b - the proposed group b participant is not matched to any group be participant and the 2 participants are matched to
+each other
+3a -> 4 - group b sees that the proposed one is more suitable, the 2 get binded, previous group a bind is binded to no one
+3a -> 5 - group b sees refuses offer because selected one is better than proposed one
+5 -> 6 - go to 2 and keep offering up to find a suitable group b member
+4 -> 7 - go to 1 and keep repeating the same procedure up to the point that all group a participants are matched
