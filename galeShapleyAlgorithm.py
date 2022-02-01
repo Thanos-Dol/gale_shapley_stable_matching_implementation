@@ -3,9 +3,9 @@ import random
 
 # format for input must be like: <group1canditate>([whitespace]:[whitespace]<group2canditate>[whitespace],
 # [whitespace]<group2canditate>)+
-#file = open('/home/n0mad/Documents/inputForStableMatching', 'r')
-#data = file.readlines()
-#nameindex = 0
+# file = open('/home/n0mad/Documents/inputForStableMatching', 'r')
+# data = file.readlines()
+# nameindex = 0
 
 
 class stableMatching:
@@ -45,6 +45,10 @@ class stableMatching:
         else:
             preferences = None
         return preferences
+
+    def packpreferencelistwithassociatedowners(self, owners, preferences):
+        if preferences is not None and owners is not None:
+            return dict(zip(owners, preferences))
 
     def printpreferences(self):
         if self.groupapreferences is not None:
@@ -91,5 +95,5 @@ class stableMatching:
                         groupbmatches[offered] = offerer
                         groupamatches[offerer] = offered
                     else:
-                        if groupbpreferenceshashed
+                        if groupbpreferenceshashed[offerer] < groupbpreferenceshashed[][groupbmatches[offered]]
                 if preferenceindexgroupa[turnofgroupa] < self.participantsnumber:
