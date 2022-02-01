@@ -85,6 +85,7 @@ class stableMatching:
             matched = 0
             turnofgroupa = 0
             preferenceindexgroupa = [0 for i in range(self.participantsnumber)]
+            preferencehashedlistofgroupb = self.packpreferencelistwithassociatedowners(self.groupb, self.groupbpreferences)
             while matched < self.participantsnumber:
                 if turnofgroupa == self.participantsnumber:
                     turnofgroupa = 0
@@ -95,5 +96,5 @@ class stableMatching:
                         groupbmatches[offered] = offerer
                         groupamatches[offerer] = offered
                     else:
-                        if groupbpreferenceshashed[offerer] < groupbpreferenceshashed[][groupbmatches[offered]]
+                        if groupbpreferenceshashed[offerer] < groupbpreferenceshashed[offered][groupbmatches[offered]]
                 if preferenceindexgroupa[turnofgroupa] < self.participantsnumber:
