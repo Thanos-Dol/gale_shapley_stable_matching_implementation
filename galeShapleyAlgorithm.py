@@ -96,5 +96,6 @@ class stableMatching:
                         groupbmatches[offered] = offerer
                         groupamatches[offerer] = offered
                     else:
-                        if groupbpreferenceshashed[offerer] < groupbpreferenceshashed[offered][groupbmatches[offered]]
-                if preferenceindexgroupa[turnofgroupa] < self.participantsnumber:
+                        if groupbpreferenceshashed[offerer] < preferencehashedlistofgroupb[offered][groupbmatches[offered]]:
+                            groupbmatches[offered] = offerer
+                            groupamatches[offerer] = offered
