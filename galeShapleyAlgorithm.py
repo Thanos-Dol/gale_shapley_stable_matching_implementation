@@ -101,8 +101,15 @@ class stableMatching:
                             matched += 1
                         else:
                             if groupbpreferenceshashed[offerer] < preferencehashedlistofgroupb[offered][groupbmatches[offered]]:
+                                groupamatches[groupbmatches[offered]] = None
                                 groupbmatches[offered] = offerer
                                 groupamatches[offerer] = offered
                             else:
                                 continueasking = True
                         preferenceindexgroupa[turnofgroupa] += 1
+            return groupamatches, groupbmatches
+        return None
+
+    def printmatches(self, matches):
+        for key in matches:
+            print(f"{key} - {matches[key]}", end='\n')

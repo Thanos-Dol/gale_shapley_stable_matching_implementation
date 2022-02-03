@@ -11,5 +11,6 @@ if __name__ == '__main__':
     sm.groupapreferences = sm.randomisepreferences(sm.groupb)
     sm.groupbpreferences = sm.randomisepreferences(sm.groupa)
     sm.printpreferences()
+    sm.printmatches(sm.stablematchingfinder()[0])
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
