@@ -89,13 +89,20 @@ class stableMatching:
             while matched < self.participantsnumber:
                 if turnofgroupa == self.participantsnumber:
                     turnofgroupa = 0
-                if preferenceindexgroupa[turnofgroupa] is None:
-                    offerer = self.groupa[turnofgroupa]
-                    offered = self.groupapreferences[turnofgroupa][preferenceindexgroupa[turnofgroupa]]
-                    if groupbmatches[offered] is None:
-                        groupbmatches[offered] = offerer
-                        groupamatches[offerer] = offered
-                    else:
-                        if groupbpreferenceshashed[offerer] < preferencehashedlistofgroupb[offered][groupbmatches[offered]]:
+                offerer = self.groupa[turnofgroupa]
+                continueasking = True
+                while continueasking:
+                    continueasking = False
+                    if preferenceindexgroupa[turnofgroupa] < self.participantsnumber:
+                        offered = self.groupapreferences[turnofgroupa][preferenceindexgroupa[turnofgroupa]]
+                        if groupbmatches[offered] is None:
                             groupbmatches[offered] = offerer
                             groupamatches[offerer] = offered
+                            matched += 1
+                        else:
+                            if groupbpreferenceshashed[offerer] < preferencehashedlistofgroupb[offered][groupbmatches[offered]]:
+                                groupbmatches[offered] = offerer
+                                groupamatches[offerer] = offered
+                            else:
+                                continueasking = True
+                        preferenceindexgroupa[turnofgroupa] += 1
